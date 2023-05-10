@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SocketTestApp</string>
+    <string name="home_title">TCP/IP TEST</string>
+    <string name="default_ip">192.168.11.66</string>
+    <string name="ip_text">IP :</string>
+    <string name="port_text">PORT :</string>
+    <string name="default_port">8181</string>
+    <string name="server_start_text">START</string>
+    <string name="server_stop_text">STOP</string>
+    <string name="send_A_text">send A</string>
+</resources>

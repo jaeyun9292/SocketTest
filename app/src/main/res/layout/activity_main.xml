@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/home_title"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="@string/home_title"
+        android:textColor="#818181"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/ip_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center_vertical"
+        android:text="@string/ip_text"
+        android:textColor="#818181"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_title" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/ip_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:text="@string/default_ip"
+        android:textColor="#818181"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ip_tv"
+        app:layout_constraintStart_toEndOf="@+id/ip_tv"
+        app:layout_constraintTop_toTopOf="@+id/ip_tv" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/port_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center_vertical|right"
+        android:text="@string/port_text"
+        android:textColor="#818181"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="@+id/ip_tv"
+        app:layout_constraintTop_toBottomOf="@+id/ip_tv" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/port_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:text="@string/default_port"
+        android:textColor="#818181"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/port_tv"
+        app:layout_constraintStart_toEndOf="@+id/port_tv"
+        app:layout_constraintTop_toTopOf="@+id/port_tv" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/start_btn"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/server_start_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_title" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/stop_btn"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:text="@string/server_stop_text"
+        app:layout_constraintEnd_toEndOf="@+id/start_btn"
+        app:layout_constraintTop_toBottomOf="@+id/start_btn" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/send_btn_1"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/send_A_text"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/port_tv" />
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:background="@color/white"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/send_btn_1">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/debug_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:scrollbars="vertical"
+            android:textColor="@color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toTopOf="@+id/scrollview"
+            app:layout_constraintEnd_toEndOf="@+id/scrollview"
+            app:layout_constraintStart_toStartOf="@+id/scrollview"
+            app:layout_constraintTop_toTopOf="@+id/scrollview" />
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
