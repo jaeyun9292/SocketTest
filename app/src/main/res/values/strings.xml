@@ -7,5 +7,17 @@
     <string name="default_port">8181</string>
     <string name="server_start_text">START</string>
     <string name="server_stop_text">STOP</string>
-    <string name="send_A_text">send A</string>
+
+
+    <string name="send_A_on_text">sn01\non</string>
+    <string name="send_A_off_text">sn01\noff</string>
+    <string name="send_B_on_text">sn02\non</string>
+    <string name="send_B_off_text">sn02\noff</string>
+    <string name="send_C_on_text">sn03\non</string>
+    <string name="send_C_off_text">sn03\noff</string>
+    <string name="send_D_low_text">sn04\n70</string>
+    <string name="send_D_medium_text">sn04\n90</string>
+    <string name="send_D_high_text">sn04\n130</string>
+    <string name="send_E_on_text">sn05\non</string>
+    <string name="send_E_off_text">sn05\noff</string>
 </resources>

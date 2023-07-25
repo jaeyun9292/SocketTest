@@ -26,6 +26,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, OnServerInteract
     private lateinit var port: String
     private lateinit var binding: ActivityMainBinding
 
+    private var btn1Value = 0
+    private var btn2Value = 0
+    private var btn3Value = 0
+    private var btn4Value = 0
+    private var btn5Value = 0
+
     companion object {
         lateinit var prefs: PreferenceUtil
     }
@@ -49,6 +55,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, OnServerInteract
         binding.startBtn.setOnClickListener(this)
         binding.stopBtn.setOnClickListener(this)
         binding.sendBtn1.setOnClickListener(this)
+        binding.sendBtn2.setOnClickListener(this)
+        binding.sendBtn3.setOnClickListener(this)
+        binding.sendBtn4.setOnClickListener(this)
+        binding.sendBtn5.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -72,7 +82,70 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, OnServerInteract
             }
 
             R.id.send_btn_1 -> {
-                onTestInteraction("A")
+                btn1Value++
+                if (btn1Value > 1) btn1Value = 0
+                if (btn1Value == 0) {
+                    binding.sendBtn1.text = getString(R.string.send_A_on_text)
+                    onTestInteraction("sn01_off_000")
+                } else {
+                    binding.sendBtn1.text = getString(R.string.send_A_off_text)
+                    onTestInteraction("sn01_on_000")
+                }
+            }
+
+            R.id.send_btn_2 -> {
+                btn2Value++
+                if (btn2Value > 1) btn2Value = 0
+                if (btn2Value == 0) {
+                    binding.sendBtn2.text = getString(R.string.send_B_on_text)
+                    onTestInteraction("sn02_off_000")
+                } else {
+                    binding.sendBtn2.text = getString(R.string.send_B_off_text)
+                    onTestInteraction("sn02_on_000")
+                }
+            }
+
+            R.id.send_btn_3 -> {
+                btn3Value++
+                if (btn3Value > 1) btn3Value = 0
+                if (btn3Value == 0) {
+                    binding.sendBtn3.text = getString(R.string.send_C_on_text)
+                    onTestInteraction("sn03_off_000")
+                } else {
+                    binding.sendBtn3.text = getString(R.string.send_C_off_text)
+                    onTestInteraction("sn03_on_000")
+                }
+            }
+
+            R.id.send_btn_4 -> {
+                btn4Value++
+                if (btn4Value > 2) btn4Value = 0
+                when (btn4Value) {
+                    0 -> {
+                        binding.sendBtn4.text = getString(R.string.send_D_low_text)
+                        onTestInteraction("sn04_on_130")
+                    }
+                    1 -> {
+                        binding.sendBtn4.text = getString(R.string.send_D_medium_text)
+                        onTestInteraction("sn04_on_70")
+                    }
+                    else -> {
+                        binding.sendBtn4.text = getString(R.string.send_D_high_text)
+                        onTestInteraction("sn04_on_90")
+                    }
+                }
+            }
+
+            R.id.send_btn_5 -> {
+                btn5Value++
+                if (btn5Value > 1) btn5Value = 0
+                if (btn5Value == 0) {
+                    binding.sendBtn5.text = getString(R.string.send_E_on_text)
+                    onTestInteraction("sn05_off_000")
+                } else {
+                    binding.sendBtn5.text = getString(R.string.send_E_off_text)
+                    onTestInteraction("sn05_on_000")
+                }
             }
         }
     }
